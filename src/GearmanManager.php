@@ -625,7 +625,7 @@ abstract class GearmanManager {
         }
 
         if (isset($gearman_config[self::DEFAULT_CONFIG])) {
-            $this->config = $gearman_config[self::DEFAULT_CONFIG];
+            $this->config = array_merge($this->config, $gearman_config[self::DEFAULT_CONFIG]);
             $this->config['functions'] = array();
         }
 

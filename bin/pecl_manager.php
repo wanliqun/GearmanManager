@@ -7,4 +7,9 @@ if(!class_exists("GearmanManager\Bridge\GearmanPeclManager")) {
 
 declare(ticks = 1);
 
-$gm = new GearmanManager\Bridge\GearmanPeclManager();
+$gm = NULL;
+if (isset($config)) {
+    $gm = new GearmanManager\Bridge\GearmanPeclManager($config);  
+} else {
+    $gm = new GearmanManager\Bridge\GearmanPeclManager();
+}
